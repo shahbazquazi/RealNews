@@ -59,7 +59,7 @@ export class News extends Component {
             <div className="container my-3">
 
                 <div className="d-flex justify-content-center">
-                    <h2 className="my-3">RealNews - trust is our priority</h2>
+                    <h2 className="my-3">RealNews - "Read All The News At One Place"</h2>
 
                     {this.state.loading && <div className="spinner-border text-warning m-3" role="status">
                         <span className="sr-only"></span>
@@ -69,7 +69,7 @@ export class News extends Component {
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element) => {
                         return <div className="col-md-4" key={element.url}>
-                            <Newsitems title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} />
+                            <Newsitems title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                         </div>
                     })}
                 </div>
