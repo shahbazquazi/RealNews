@@ -29,7 +29,7 @@ export class News extends Component {
     }
     async UpdateNews() {
         this.props.setProgress(0);
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=5960a4a74b1b45d1a4aeab12372a951f&page=${this.state.page}&pagesize=15`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=15`;
         this.setState({ loading: true });
         let data = await fetch(url);
         this.props.setProgress(30);
@@ -44,7 +44,7 @@ export class News extends Component {
    
     fetchMoreData = async () => {
         this.setState({ page: this.state.page + 1 })
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=5960a4a74b1b45d1a4aeab12372a951f&page=${this.state.page}&pagesize=15`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pagesize=15`;
 
         let data = await fetch(url);
         let parseData = await data.json();
@@ -54,7 +54,7 @@ export class News extends Component {
         return (
             <>
                 <div className="d-flex justify-content-center">
-                    <h2 className="my-3">RealNews - "Read All The News At One Place"</h2>
+                    <h2 className="my-3">RealNews - "Read All The Top Headlines At One Place"</h2>
                     {this.state.loading && <div className="d-flex justify-content-center"><div className="spinner-border text-warning m-3" role="status">
                         <span className="sr-only"></span>
                     </div></div>}
