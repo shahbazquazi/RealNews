@@ -54,7 +54,11 @@ export class News extends Component {
         return (
             <>
                 <div className="d-flex justify-content-center">
+<<<<<<< HEAD
                     <h2 className="mt-5 mb-4">RealNews - "Read All The Top Headlines At One Place"</h2>
+=======
+                    <h2 className="mt-5 mb-3">RealNews - "Read All The Top Headlines At One Place"</h2>
+>>>>>>> 092efd9c445895e29ba373a60fad37c66c3996df
                     {this.state.loading && <div className="d-flex align-items-end"><div className="spinner-border text-warning m-3" role="status">
                         <span className="sr-only"></span>
                     </div></div>}
